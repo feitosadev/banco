@@ -5,15 +5,17 @@ public class Conta {
 	private Integer numero;
 	private String titular;
 	private Double saldo;
+	private Double limiteSaque;
 	
 	public Conta() {
 		saldo = 0.0;
 	}
 	
-	public Conta(Integer numero, String titular) {
-		this();//chamada do construtor acima.
+	public Conta(Integer numero, String titular, Double saldo, Double limiteSaque) {
 		this.numero = numero;
 		this.titular = titular;
+		this.saldo = saldo;
+		this.limiteSaque = limiteSaque;
 	}
 
 	public Integer getNumero() {
@@ -35,7 +37,19 @@ public class Conta {
 	public Double getSaldo() {
 		return saldo;
 	}
-	
+
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+
+	public Double getLimiteSaque() {
+		return limiteSaque;
+	}
+
+	public void setLimiteSaque(Double limiteSaque) {
+		this.limiteSaque = limiteSaque;
+	}
+
 	public void Saque(double valor) {
 		if(saldo >= valor) {
 			saldo -= valor;
@@ -47,5 +61,15 @@ public class Conta {
 	
 	public void Deposito(double valor) {
 		saldo += valor;
+	}
+	
+	public String validacaoSaque(double quantia) {
+		if(quantia > getLimiteSaque()) {
+			return ("Erro ao sacar: A quantia excede o limite de saque.");
+		}
+		if(quantia > getSaldo()){
+			return ("Erro ao sacar: Saldo insuficiente.");			
+		}
+		return null;		
 	}
 }

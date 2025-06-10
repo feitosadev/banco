@@ -10,7 +10,7 @@ public class ContaEmpresa extends Conta{
 	}
 	
 	public ContaEmpresa(Integer numero, String titular, String cNPJ, Double emprestimoDisponivel) {
-		super(numero, titular);
+		super();
 		CNPJ = cNPJ;
 		this.emprestimoDisponivel = emprestimoDisponivel;
 	}
