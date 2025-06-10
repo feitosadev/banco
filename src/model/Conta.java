@@ -51,25 +51,20 @@ public class Conta {
 	}
 
 	public void Saque(double valor) {
-		if(saldo >= valor) {
-			saldo -= valor;
-		}
-		else {
-			System.out.println("Saldo insuficiente.");
-		}
+		validacaoSaque(valor);
+		saldo -= valor;
 	}
 	
 	public void Deposito(double valor) {
 		saldo += valor;
 	}
 	
-	public String validacaoSaque(double quantia) {
+	private void validacaoSaque(double quantia) {
 		if(quantia > getLimiteSaque()) {
-			return ("Erro ao sacar: A quantia excede o limite de saque.");
+			throw new RuntimeException ("Erro ao sacar: A quantia excede o limite de saque.");
 		}
 		if(quantia > getSaldo()){
-			return ("Erro ao sacar: Saldo insuficiente.");			
-		}
-		return null;		
+			throw new RuntimeException ("Erro ao sacar: Saldo insuficiente.");			
+		}		
 	}
 }

@@ -9,8 +9,9 @@ public class ContaEmpresa extends Conta{
 		super();
 	}
 	
-	public ContaEmpresa(Integer numero, String titular, String cNPJ, Double emprestimoDisponivel) {
-		super();
+	public ContaEmpresa(Integer numero, String titular, Double saldo, Double limiteSaque, String cNPJ,
+			Double emprestimoDisponivel) {
+		super(numero, titular, saldo, limiteSaque);
 		CNPJ = cNPJ;
 		this.emprestimoDisponivel = emprestimoDisponivel;
 	}
