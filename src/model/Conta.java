@@ -4,7 +4,7 @@ public class Conta {
 
 	private Integer numero;
 	private String titular;
-	private Double saldo;
+	protected Double saldo;
 	private Double limiteSaque;
 	
 	public Conta() {

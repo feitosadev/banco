@@ -37,7 +37,7 @@ public class ContaEmpresa extends Conta{
 			Deposito(valor);
 		}
 		else {
-			System.out.println("Valor não disponível para emprestimo.");
+			throw new RuntimeException ("Valor não disponível para emprestimo.");
 		}
 	}
 }

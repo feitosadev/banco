@@ -4,12 +4,19 @@ import java.util.Scanner;
 
 import exceptions.BusinessException;
 import model.Conta;
+import model.ContaEmpresa;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		//ContaEmpresa contaEmpresa = new ContaEmpresa(1, "José", "1002040", 1000.0);
+		Conta contateste = new Conta(0002, "Carlos", 0.0, 300.0);
+		ContaEmpresa contaEmpresa = new ContaEmpresa(0001, "José", 0.0, 1000.0, "345.574.0001-75", 500.0);
+		
+		//UPCASTING
+		Conta conta1 = contaEmpresa;
+		ContaEmpresa contaempresa1;
+		
 		
 		Scanner entrada = new Scanner(System.in);		
 		
